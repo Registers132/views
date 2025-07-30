@@ -57,9 +57,6 @@
             <a class="nav-link" href="/profile">Profile</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/goals">Goals</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="/logout">Logout</a>
           </li> 
         </ul>
@@ -83,6 +80,33 @@
     </form>
 
     <hr class="my-5">
+
+    <h3 class="mt-5">Your Logged Goals</h3>
+    <% if (goals && goals.length > 0) { %>
+        <ul class="list-group">
+            <% goals.forEach(function(goal) { %>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <div>
+                        <strong><%= goal.description %></strong> <br>
+                        <small>Target Date: <%= new Date(goal.targetDate).toLocaleDateString() %></small> <br>
+                        <small>Status: <%= goal.status %></small>
+                    </div>
+                    <span class="badge bg-success rounded-pill">
+                        Goal
+                    </span>
+                </li>
+            <% }); %>
+         </ul>
+    <% } else { %>
+        <p>You haven't set any goals yet. Start by adding one!</p>
+    <% } %>
   
+  <footer class="bg-dark text-white py-3 mt-4">
+        <div class="container text-center">
+            <p>&copy; 2025 SportTracker App. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
