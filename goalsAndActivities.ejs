@@ -67,6 +67,22 @@
     </div>
   </nav>
 
+  <body>
+  <div class="container form-container">
+    <h2 class="mb-4">Add a New Goal</h2>
+    <form action="/add-goal" method="POST">
+      <div class="mb-3">
+        <label for="goalDescription" class="form-label">Goal Description</label>
+        <input type="text" class="form-control" id="goalDescription" name="description" required>
+      </div>
+      <div class="mb-3">
+        <label for="targetDate" class="form-label">Target Date</label>
+        <input type="date" class="form-control" id="targetDate" name="targetDate" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Add Goal</button>
+    </form>
+
+    <hr class="my-5">
   
 </body>
 </html>
